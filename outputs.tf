@@ -8,7 +8,6 @@ output "snet_name" {
 }
 
 */
-
 output "snet_id" {
-  value = azurerm_subnet.snet.id
+  value = values(azurerm_subnet.snet).*.id
 }
