@@ -1,4 +1,7 @@
 # terraform-azurerm-vnet
+
+## The module is for learning purposes.
+
 Note 1
 ------ 
 Resource group should exist before calling to this module.
@@ -22,8 +25,7 @@ vnet_address_space = ["10.0.0.0/16", "192.168.0.0/16"]
 subnets = {
   "front"   = { subnet = ["10.0.0.0/24"] }
   "middle"  = { subnet = ["10.0.1.0/24"] },
-  "back"    = { subnet = ["10.0.2.0/24"] },
-  "bastion" = { subnet = ["192.168.0.0/24"] }
+  "back"    = { subnet = ["10.0.2.0/24"] }
 }
 
 tags = {

@@ -13,55 +13,35 @@ variable "location" {
 }
 
 variable "vnet_address_space" {
-  description = <<EOF
-  List of vNet Prefixes.
-  Examle:
-  vnet_address_space   = ["10.0.0.0/16", "192.168.0.0/16"]
-  EOF
+  description = "List of vNet prefixes"
   type        = list(string)
   default     = ["172.16.0.0/12"]
 }
 
 variable "subnets" {
-  description = <<EOF
-  Names and Prefixes of Subnets.
-  Example:
-  subnets = {
-    "front" = { subnet = ["10.0.0.0/24"] },
-    "middle" = { subnet = ["10.0.1.0/24"] },
-    "back" = { subnet = ["10.0.2.0/24"] },
-    "bastion" = { subnet = ["192.168.0.0/24"] }
-  }
-  EOF
+  description = "Names and address prefixes of subnets"
   type        = map(any)
   default = {
-    "front" = { subnet = ["172.16.0.0/24"] },
-    "back"  = { subnet = ["172.16.1.0/24"] }
+    "front" = { subnet = ["172.16.1.0/24"] },
+    "mid"   = { subnet = ["172.16.2.0/24"] },
+    "back"  = { subnet = ["172.16.3.0/24"] }
   }
 }
 
 variable "business_unit_prefix" {
-  description = "Business Unit Prefix. Example: IT"
+  description = "Business unit prefix"
   type        = string
   default     = "IT"
 }
 
 variable "environment_prefix" {
-  description = "Environment Prefix. Example: dev"
+  description = "Environment prefix"
   type        = string
   default     = "dev"
 }
 
 variable "tags" {
-  description = <<EOF
-    Tags.
-    Example:
-    tags     = {
-      "unit"  = "IT"
-      "env"   = "dev"
-      "owner" = "Sasa Popravak"
-    }
-    EOF
+  description = "vNet tags"
   type        = map(string)
   default = {
     "unit" = "it"
@@ -69,3 +49,4 @@ variable "tags" {
     owner  = "Sasa Popravak"
   }
 }
+
