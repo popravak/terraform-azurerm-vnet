@@ -1,15 +1,15 @@
 
 
 variable "rg_name" {
-  description = "Resource group name. Example: rgspo001"
+  description = "Resource group name"
   type        = string
   default     = "rgspo001"
 }
 
 variable "location" {
-  description = "Resource Group Location. Example: northeurope"
+  description = "Resource group location"
   type        = string
-  default     = "northeurope"
+  default     = "North Europe"
 }
 
 variable "vnet_address_space" {
